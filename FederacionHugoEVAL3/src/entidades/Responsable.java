@@ -6,17 +6,12 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Serializable;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
 import java.util.Scanner;
 import java.util.TreeSet;
 
-import dao.operacionesCRUD;
 import utils.*;
 import validaciones.Validaciones;
 
@@ -156,7 +151,7 @@ public class Responsable implements Serializable, Comparable<Responsable> {
 	public String toString() {
 		return "" + id + ". " + persona.getNombre() + "(" + persona.getNifnie().mostrar() + ") , horario de "
 				+ horarioIni.format(DateTimeFormatter.ofPattern("HH:mm")) + " a "
-				+ horarioFin.format(DateTimeFormatter.ofPattern("HH:mm")) + " tfno: " + telefonoProf;
+				+ horarioFin.format(DateTimeFormatter.ofPattern("HH:mm"));
 	}
 
 	/// Examen 10 Ejercicio 4
@@ -206,12 +201,9 @@ public class Responsable implements Serializable, Comparable<Responsable> {
 				String[] horaAux = horainiStr.split("\\:");
 				java.time.LocalTime horaini = LocalTime.of(Integer.valueOf(horaAux[0]), Integer.valueOf(horaAux[1]));
 				
-				
 				String horafinStr = campos[4];
 				horaAux = horafinStr.split("\\:");
 				java.time.LocalTime horafin = LocalTime.of(Integer.valueOf(horaAux[0]), Integer.valueOf(horaAux[1]));
-				
-				
 				DatosPersona dp = Datos.buscarPersonaPorId(idPersona);
 				Responsable r = new Responsable(idResp, tfnProf, horaini, horafin, dp);
 				responsables.add(r); /// Se autoordena en cada inserción
@@ -242,5 +234,6 @@ public class Responsable implements Serializable, Comparable<Responsable> {
 		return Long.compare(this.id, o.id);
 	}
 
-	
+
+
 }

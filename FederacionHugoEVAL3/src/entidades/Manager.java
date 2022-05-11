@@ -5,15 +5,9 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-import dao.operacionesCRUD;
-import utils.ConexBD;
 import utils.Datos;
 import validaciones.Validaciones;
 
