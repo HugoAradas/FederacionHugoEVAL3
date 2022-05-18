@@ -317,10 +317,10 @@ public class Validaciones {
 		return fecha.after(hoyMas1Mes);
 		
 	}
-	
-	public static boolean validarFechaNuevoAtleta(Date fechaMin) {
-		// TODO Esbozo de método generado automáticamente
-		return true;
+
+	public static boolean validarFechaNuevoAtleta(Date fecha) {
+		Date min = new Date(1960-1900, 1, 1);
+		return fecha.after(min);
 	}
 
 }
